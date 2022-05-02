@@ -1,0 +1,36 @@
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import { loginReducer } from "../reducers/loginReducer";
+import { registerReducer } from "../reducers/registerReducer";
+import { selectedCoordReducer } from "../reducers/selectedCoordReducer";
+import { travelsReducer } from "../reducers/travelsReducer";
+
+// Local Storage
+import { guardarLocalStorage, obtenerLocalStorage } from "../../utils/LocalStorage";
+
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+const storageState = obtenerLocalStorage();
+
+const reducersEnviar = combineReducers({
+    login: loginReducer,
+    register: registerReducer,
+    selectedCoord: selectedCoordReducer,
+    travels: travelsReducer
+})
+
+export const store = createStore(
+    reducersEnviar,
+    storageState,
+    composeEnhancers(
+        applyMiddleware(thunk)
+    )
+)
+
+store.subscribe(() => {
+    guardarLocalStorage(
+        {
+           travels: store.getState().travels
+        }
+   )
+})

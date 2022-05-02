@@ -1,0 +1,46 @@
+/* Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e0e0e0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* */
+
+.app {
+  text-align: center
+}
+.app__logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app__link {
+  color: #61dafb
+}
+
+/*Forecast*/
+.forecast {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: 10000000;
+}
