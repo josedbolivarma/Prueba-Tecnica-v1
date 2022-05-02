@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import Footer from "../components/Footer"
 import Header from "../components/Header"
 import FormTravel from "../pages/FormTravel"
 import Home from "../pages/Home"

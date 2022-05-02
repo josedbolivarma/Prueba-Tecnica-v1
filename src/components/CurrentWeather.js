@@ -28,16 +28,11 @@ class CurrentWeather extends React.Component {
                     </p>
                     <div className='current__weather__box'>
                     {img}
-                    <h2>COUNTRY</h2>
-
                     </div>
                 </div>
                 <div>
                     <p className='current__weather__feels__like'>
                       <CloudIcon /> Feels Like {this.props.feelsLike}°
-                    </p>
-                    <p>
-                        {/* Clouds {this.props.forecast[0].humidity} */}
                     </p>
                 </div>
             </div>

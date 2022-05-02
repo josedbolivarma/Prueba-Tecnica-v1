@@ -6,7 +6,6 @@ import Register from '../pages/Register';
 import DashboardRoute from './DashboardRoute';
 import PrivateRouters from './PrivateRouters';
 import PublicRouters from './PublicRouters';
-import logo from '../assets/Amazon-logo.png';
 
 const AppRoutes = () => {
   const [checking, setChecking] = useState(true);

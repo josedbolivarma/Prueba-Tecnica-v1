@@ -10,13 +10,12 @@ import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 const MapBox = () => {
-  // const api = `https://api.mapbox.com/{endpoint}?access_token={your_access_token}`;
   const classes = useStyles();
   const { city } = useSelector(store => store.selectedCoord);
   const [selectedName, setSelectedName] = useState('Senegal');  
   let [viewport, setViewport] = useState({
-      latitude: -14.8208799701359,
-      longitude: 15.2214469730201,
+      latitude: 4.6489267,
+      longitude: -74.3880257,
       pitch: 50, // pitch in degrees
       // bearing: -60, // bearing in degrees,
       zoom:5,
@@ -26,28 +25,27 @@ const MapBox = () => {
   })
 
   useEffect(() => {
+    const printMap = async () => {
+      if(!city){
+        const mapa = await getMap('Bogota');
+        setSelectedName(mapa.data.features[0].place_name);
+
+      } else {
+        const mapa = await getMap(city);
+        setSelectedName(mapa.data.features[0].place_name);
+        
+        setViewport({
+          ...viewport,
+          latitude: mapa.data.features[0].center[0],
+          longitude: mapa.data.features[0].center[1]
+        })
+      }
+    }
+
     printMap();
   },[city])
  
-  const printMap = async () => {
-        if(!city){
-          const mapa = await getMap('Bogota');
-          setSelectedName(mapa.data.features[0].place_name);
-
-
-    
-        } else {
-          const mapa = await getMap(city);
-          setSelectedName(mapa.data.features[0].place_name);
-          
-          setViewport({
-            ...viewport,
-            latitude: mapa.data.features[0].center[0],
-            longitude: mapa.data.features[0].center[1]
-          })
-        }
-      }
- 
+  
 
   return (
         // <ConditionalRender />

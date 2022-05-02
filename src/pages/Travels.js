@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 // Material UI
 import { makeStyles } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { listAsync } from '../redux/actions/actionTravels';
-import { CardTravel } from '@material-ui/icons';
 import TravelCard from '../components/TravelCard';
 
 const Travels = () => {
@@ -14,11 +13,9 @@ const Travels = () => {
 
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(listAsync());
   }, []);
-
 
   return (
     <div className={classes.travels}>

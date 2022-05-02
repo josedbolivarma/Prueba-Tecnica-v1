@@ -1,40 +1,67 @@
 ### Creamos nuestro proyecto en React con el comando npx create-react-app.
 
 ### Limpiamos la Aplicación
+- Archivos que no se utilizan y agregamos los nuevos metadatos que tendrá nuestra apliación.
 
 ### Creamos la Barra de Búsqueda
+- Encargada posteriormente de la funcionalidad para buscar una locación en el mapa y sus datos climáticos.
 
-### Creamos nuestra Sweather API usando el endpoint https://openweathermap.org
+### Integración de las API: openWeather y Mapbox
+- Creamos nuestra Sweather API usando el endpoint https://openweathermap.org
+- Creamos nuestra Mabbox API usando el endpoint https://openweathermap.org
+- Creamos una nueva carpeta llamada api que contendrá un archivo con el mismo nombre.
+- En este vamos a exportar 2 funciones de tipo get utilizando axios: Definidas para la obtención de datos de cada API.
+
+### Creación del Hook useForm 
+- Carpeta Hooks y archivo useForm.js
+- Para poder capturar los datos de nuestro login y registro de usuario del componente Login y Register.
+
+### Incorporación de Firebase
+- Creación del proyecto en consola de firebase.
+- Creación de módulo de autenticación y base de datos con firestore.
+- Habilitación de provedores para autenticación de los usuarios.
 
 ### Creamos el componente CurrentWeather 
+- Encargado de la lógica y envío de datos por medio de redux y sus componentes hijos (Smart-Component).
 
 ### Creamos el componente ForecastWeather 
+- Contendra el renderizado de nuestra api openWeather para datos climáticos (Dumb-Component)
+
+### Creamos el componente ForecastWeather 
+- Componente inteligente encargado de pintar el mapa de Mapbox y que escuchará los cambios de úbicacion con un estado global de redux.
 
 ### Creamos el Redux:
 -  Estructura de carpetas: reducers, actions, types y store.
 -  En cada carpeta creamos un reducer, action y types de archivo extension .js para: Login, Register, SelectedCoord y Travels.
 
-### Creamos el enrutamiento dinámico con react-router-dom:
--AppRoutes: Contener de rutas principales : Privadas y Públicas.
--PublicRouters: Válida mis rutas públicas.
--PrivateRouters: Válida mis rutas privadas.
--DashboardRoute: Contiene todas mis rutas públicas.
-
 ### Enlazamos las API:
--Mapbox: Para los mapas.
--SweatherApp: Para los datos climáticos por geolocalización.
+- Mapbox: Para los mapas.
+- SweatherApp: Para los datos climáticos por geolocalización.
+
+### Creamos el enrutamiento dinámico con react-router-dom:
+- AppRoutes: Contener de rutas principales : Privadas y Públicas.
+- PublicRouters: Válida mis rutas públicas.
+- PrivateRouters: Válida mis rutas privadas.
+- DashboardRoute: Contiene todas mis rutas públicas.
+
+### Creación del CRUD con redux y firebase
+- Pagina FormTravels.js: que contendrá el registro para la creación planes para nuevos viajes de nuestros usuario.
+- Creacion de la carpeta helpers: que contendrá nuestro archivo FileUp.js encargado de subir las imagenes del formulario a nuestro alojamiento en la nube con Cloudinary.
+- Página Travels.js: que contendrá la lista de los últimos diez viajes planificados. 
+
+### Incorporación del localstorage para guardar los próximos viajes de nuestros usuarios.
 
 //-------------------------- Deploy --------------------------//
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+CÓDIGO DEL REPOSITORIO: [GITHUB](https://github.com/josedbolivarma/Prueba-Tecnica-v1)
+
+DESPLIEGUE DEL PROYECTO: [VERCEL](https://prueba-tecnica-v1-4quywvomn-josedbolivarma.vercel.app/).
 
 //-------------------------- Deploy --------------------------//
 
-This project was created with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
+//-------------------------- Scripts --------------------------//
 
 ### `npm start`
 

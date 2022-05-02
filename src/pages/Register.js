@@ -75,7 +75,7 @@ const Register = () => {
             </form>
             
             <p>
-                AMAZON CLONE Conditions of Use and Terms.
+                 Sweather App Conditions of Use and Terms.
             </p>
             <LinkRedirect to='/login'>
                 Login

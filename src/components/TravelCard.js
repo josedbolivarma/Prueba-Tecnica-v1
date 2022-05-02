@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 //Material UI
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import Sidebar from './Sidebar';
 
 const TravelCard = ({item}) => {
